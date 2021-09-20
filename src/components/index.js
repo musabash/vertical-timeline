@@ -5,7 +5,7 @@ import TimelineMark from "./mark"
 
 const IntervalContext = createContext()
 
-export default function VerticalTimeline({events, ...restProps}){
+export default function VerticalTimeline({events, interval, ...restProps}){
   const [tick, setTick] = useState(0)
   const [isFirstLoad, setIsFirstLoad] = useState(true)
   const [time, setTime] = useState(3000)
@@ -30,7 +30,7 @@ export default function VerticalTimeline({events, ...restProps}){
     }, time)
 
     if (isFirstLoad){
-      setTime(5000)
+      setTime(Math.max(3000, interval))
       setIsFirstLoad(false)
     }      
   }, [tick])
