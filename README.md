@@ -29,7 +29,7 @@ events = [
 Interval is the time delay in milliseconds after every element is added. It should be not less than `3000`. 
 
 ## For development
-### 1. Get the component
+### Get the component
 Copy and insert `components` folder into your project's `src` folder. Import and use the component as follows:
 ```js
 import VerticalTimeline from './components'
@@ -40,7 +40,7 @@ function App() {
 }
 ```
 
-### 2. Install dependencies
+### Install dependencies
 For styling, [styled-components](https://styled-components.com/docs) was used. 
 To install run this command: `npm install --save styled-components`
 
@@ -49,7 +49,7 @@ or
 1. Add this line to your dependencies in the `package.json` file: `"styled-components": "^5.3.0",`
 2. Run this command `npm install`
 
-## Clone this repo and run in your computer
+## If you want to run this app in your computer:
 1. `$ git clone https://github.com/musabash/vertical-timeline.git`
 2. `$ npm install`
 3. `$ npm run start`
