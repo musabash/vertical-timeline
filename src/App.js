@@ -2,7 +2,7 @@ import VerticalTimeline from './components'
 import { events } from "./components/events"
 
 function App() {
-  return <VerticalTimeline events={events} interval={5000}/>
+  return <VerticalTimeline events={events} interval={20000}/>
 }
 
 export default App;

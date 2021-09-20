@@ -14,7 +14,7 @@ export default function VerticalTimeline({events, interval, ...restProps}){
   const [marks, setMarks] = useState([])
 
   useEffect(() => {
-    setTimeout(() => {
+    events && setTimeout(() => {
       setIsOnLeft(prev => !prev)
       setMarks(prev => [<TimelineMark
                     key={events[tick].id}
@@ -30,7 +30,7 @@ export default function VerticalTimeline({events, interval, ...restProps}){
     }, time)
 
     if (isFirstLoad){
-      setTime(Math.max(3000, interval))
+      setTime(Math.max(3000, interval || 0))
       setIsFirstLoad(false)
     }      
   }, [tick])
