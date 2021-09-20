@@ -8,9 +8,12 @@ This is a React component that displays a timeline of events by order of occuran
 
 Every 20 seconds a new event is added on top of the Timeline, up to a defined max 5 elements. After the cap has been reached, the last event is removed also.
 
-To demonstrate there is a pre-defined array of events was used in the app.
+To demonstrate there is a pre-defined array of events was used in the app which you can check at https://vertical-timeline-component.netlify.app/.
 
 Each Event is made of an object having values of:
 - time
 - title
 - description
+
+## Vertical Timeline Props
+-----
