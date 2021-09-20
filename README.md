@@ -49,5 +49,7 @@ or
 1. Add this line to your dependencies in the `package.json` file: `"styled-components": "^5.3.0",`
 2. Run this command `npm install`
 
-## Clone this repo to your computer
-`git clone https://github.com/musabash/vertical-timeline.git`
+## Clone this repo and run in your computer
+1. `$ git clone https://github.com/musabash/vertical-timeline.git`
+2. `$ npm install`
+3. `$ npm run start`
