@@ -2,8 +2,8 @@
 
 This is a React component that displays a timeline of events by order of occurance, bottom to top. On Desktop, the events are staggered inbetween two branches, whereas on mobile they collapse to a single branch.
 
-[<img src="https://user-images.githubusercontent.com/64317827/133946169-a46bb755-5b91-434b-ae80-0caec1dd34c4.png" width="304"/>](timeline-desktop.jpg)
-[<img src="https://user-images.githubusercontent.com/64317827/133946188-1bdcb09b-7c1d-400c-b21a-7b881c93d741.png" width="200"/>](timeline-mobile.jpg)
+[<img src="https://user-images.githubusercontent.com/64317827/133950381-6301c1ba-5f79-421c-9d04-dd4ca9449b4b.png" width="600"/>](timeline-desktop.jpg) 
+[<img src="https://user-images.githubusercontent.com/64317827/133950383-1d858b8d-d8ca-4472-b99f-3af77825a406.png" width="295"/>](timeline-mobile.jpg)
 
 Every 20 seconds a new event is added on top of the Timeline, up to a defined max 5 elements. After the cap has been reached, the last event is removed also.
 
@@ -49,7 +49,7 @@ or
 1. Add this line to your dependencies in the `package.json` file: `"styled-components": "^5.3.0",`
 2. Run this command `npm install`
 
-## If you want to run this app in your computer:
+## If you want to run this app on your computer:
 1. `$ git clone https://github.com/musabash/vertical-timeline.git`
 2. `$ npm install`
 3. `$ npm run start`
