@@ -18,13 +18,11 @@ export default function VerticalTimeline({events, interval, ...restProps}){
       setIsOnLeft(prev => !prev)
       setMarks(prev => [<TimelineMark
                     key={events[tick].id}
-                    initialVerPos={-15}
                   />, ...prev.slice(0, 5)])
       setCards(prev => [<Card
                     key={events[tick].id}
                     isOnLeft={isOnLeft}
                     event={events[tick]}
-                    initialVerPos={-17}
                   />, ...prev.slice(0, 5)])
       setTick(prev => prev < events.length -1 ? prev + 1 : 0 )
     }, time)

@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from 'react'
 import { Mark } from './styles'
 import { IntervalContext } from './index'
 
-export default function TimelineMark({initialVerPos,...restProps}) {
-  const [verPos, setVerPos] = useState(initialVerPos)
+export default function TimelineMark({...restProps}) {
+  const [verPos, setVerPos] = useState(-15)
   const {tick} = useContext(IntervalContext)
 
   useEffect(() => {
