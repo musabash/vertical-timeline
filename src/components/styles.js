@@ -45,6 +45,7 @@ export const CardContainer = styled.div`
   top: 0;
   position: absolute;
   display: flex;
+  cursor: pointer;
   opacity: ${({verPos}) => verPos >= 51 ? 0 : verPos < 0 ? 0 : 1};
   flex-direction: column;
   text-align: var(--text-align);
@@ -106,4 +107,34 @@ export const Mark = styled.div`
               0.3em 0.3em 0.5em #a3b1c6;
   transform: ${({verPos}) => `translate(-50%, ${verPos}em)`};
   transition: opacity 2.5s ease-in-out, transform 1.4s ease-in-out;
+`
+
+export const Modal = styled.div`
+  display: ${({visible}) => visible ? "inline" : "none"};
+  float: left;
+  position: fixed;
+  background: white;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  padding: 1em;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease;
+  z-index: 10;
+`
+export const Close = styled.div`
+  position: fixed;
+  cursor: pointer;
+  top: 0.5em;
+  right: 0.5em;
+  width: 4em;
+  padding: 0.2em;
+  color: red;
+  font-weight: 600;
+  font-size: 0.6rem;
+  height: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 `

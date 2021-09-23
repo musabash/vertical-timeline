@@ -2,6 +2,7 @@ import Card from "./card"
 import { useState, useEffect, createContext } from 'react'
 import { Container } from "./styles"
 import TimelineMark from "./mark"
+import NewModal from "./modal"
 
 const IntervalContext = createContext()
 
@@ -12,6 +13,9 @@ export default function VerticalTimeline({events, interval, ...restProps}){
   const [isOnLeft, setIsOnLeft] = useState(true)
   const [cards, setCards] = useState([])
   const [marks, setMarks] = useState([])
+  const [modalIsVisible, setModalIsVisible] = useState(false)
+  const [description, setDescription] = useState("")
+
 
   useEffect(() => {
     events && setTimeout(() => {
@@ -32,13 +36,28 @@ export default function VerticalTimeline({events, interval, ...restProps}){
       setIsFirstLoad(false)
     }      
   }, [tick])
+
+  function handleClick(description){
+    setModalIsVisible(prev => !prev)
+    setDescription(description)
+  }
+
+  const value = {
+    tick,
+    handleClick,
+    modalIsVisible,
+    setModalIsVisible,
+    description,
+    setDescription
+  }
   
   return (
-    <IntervalContext.Provider value={{tick}}>
-      <Container {...restProps}>
+    <IntervalContext.Provider value={value}>
+      <Container >
           {cards}
           {marks}
       </Container>
+      <NewModal />
     </IntervalContext.Provider>
   )
 }
