@@ -15,10 +15,12 @@ export default function VerticalTimeline({events, interval, ...restProps}){
   const [marks, setMarks] = useState([])
   const [modalIsVisible, setModalIsVisible] = useState(false)
   const [description, setDescription] = useState("")
+  const [timer, setTimer] = useState(null)
 
 
   useEffect(() => {
-    events && setTimeout(() => {
+    events && !modalIsVisible && setTimer(
+      setTimeout(() => {
       setIsOnLeft(prev => !prev)
       setMarks(prev => [<TimelineMark
                     key={events[tick].id}
@@ -29,17 +31,19 @@ export default function VerticalTimeline({events, interval, ...restProps}){
                     event={events[tick]}
                   />, ...prev.slice(0, 5)])
       setTick(prev => prev < events.length -1 ? prev + 1 : 0 )
-    }, time)
+      }, time)
+    )
 
     if (isFirstLoad){
       setTime(Math.max(3000, interval || 0))
       setIsFirstLoad(false)
     }      
-  }, [tick])
+  }, [tick, modalIsVisible])
 
   function handleClick(description){
     setModalIsVisible(prev => !prev)
     setDescription(description)
+    clearTimeout(timer)
   }
 
   const value = {
